@@ -1,17 +1,15 @@
 <div class="navbar navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
- 
       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
       <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </a>
- 
       <!-- Be sure to leave the brand out there if you want it shown -->
-     <div id="logo" data-no-turbolink>
-      <%= link_to "Brew Days",root_path, class: "brand" %>
+     <div data-no-turbolink>
+        <%= link_to "Brew Days",root_path, class: "brand" %>
      </div>
       <!-- Everything you want hidden at 940px or less, place within here -->
       <div class="nav-collapse collapse">
@@ -19,17 +17,17 @@
             <li data-no-turbolink><%= link_to "Home", root_path %></li>
          
             <% if user_signed_in? %>
-            <li data-no-turbolink><%= link_to "Add Brew +", new_brew_path %></li>
+              <li data-no-turbolink><%= link_to "Add Brew +", new_brew_path %></li>
           </ul>
           <ul class= "nav pull-right">
               <li><%= link_to " #{current_user.email}", users_show_path %></li>
               <li><%= link_to "Edit Account", edit_user_registration_path %></li>
               <li><%= link_to "Logout", destroy_user_session_path, :method => :delete %></li>
-          <% else %>
-            <li><%= link_to "Login", new_user_session_path %></li>
-            <li> <%= link_to "Sign Up", new_user_registration_path %> </li>
-          <% end %>
-        </ul>
+            <% else %>
+              <li><%= link_to "Login", new_user_session_path %></li>
+              <li> <%= link_to "Sign Up", new_user_registration_path %> </li>
+            <% end %>
+          </ul>
         <!-- .nav, .navbar-search, .navbar-form, etc -->
       </div>
  
