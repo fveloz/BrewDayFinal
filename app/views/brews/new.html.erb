@@ -1,0 +1,10 @@
+<% if @brew.errors.any? %>
+		<h2>There were errors saving your brew</h2>
+		<ul>
+	  	<% @brew.errors.full_messages.each do |msg| %>
+	  	<li><%= msg %></li>
+	  	<% end %>
+	  <ul>
+ <% end %>
+
+<%= render 'form' %>

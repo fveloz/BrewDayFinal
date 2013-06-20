@@ -1,0 +1,8 @@
+<h1> My Brews </h1>
+	<% @user.brews.order("created_at desc").each do |brew| %>
+		<fieldset>
+			<h1><%= brew.name %></h1>
+	  	<p><%= brew.story %></p>
+				<%= link_to "Show", brew %>
+		</fieldset>
+<% end %>

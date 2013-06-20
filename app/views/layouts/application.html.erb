@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Brew Days</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "nested_form" %>
+  <%= csrf_meta_tags %>
+</head>
+<%= render 'layouts/navbar' %>
+<body>
+				<!-- <p class="notice"><%= notice %></p>
+       	<p class="alert"><%= alert %></p>-->
+
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span2">
+      <h3>How It Works</h3>
+      <p>
+      Simple. Your beer has a name and has a story and we want to hear about it. We want to know the name of that beer you brewed for that competition, friend’s birthday, for your kegerator, and etc. It’s a place to share our brew days with one another. So Tell me. I want to know it’s name, I’d love to know how you came up with it, and how you brewed it. No need to hold back on the details. 
+     </p>
+    </div>
+    <div class="span10">
+      <!--Body content-->
+      <%= yield %>
+    </div>
+  </div>
+</div>
+
+
+
+</body>
+</html>

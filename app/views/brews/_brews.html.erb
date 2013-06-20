@@ -1,0 +1,6 @@
+<% @brews.each do |brew| %>
+		<div class = "box">
+					<h1><%= link_to (brew.name), brew %></h1>
+			  	<p><%= truncate(brew.story, length: 300) %></p>	
+		</div>
+<% end %>

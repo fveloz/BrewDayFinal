@@ -1,0 +1,60 @@
+<div>
+<%= nested_form_for @brew do |f| %>
+	<div class="span6">
+		<p><%= f.label :name, "Beer Name:" %> </p>
+		<p id="beername" rel='tooltip' title="What's the name of the beer?"><%= f.text_field :name, :style => "width:380px;" %></p>
+		<p><%= f.label :story, "The Story:" %></p>
+		<p id="beerstory" rel='tooltip' title="What's the story? What inspired this brew session?"><%= f.text_area :story, :style => "width:380px; height:150px;"  %></p>
+		<p><%= f.label :walkthrough, "The Brew Day:" %></p>
+		<p id="brewday" rel='tooltip' title="Walk us through your brew day."><%= f.text_area :walkthrough, :style => "width:380px; height:150px;" %></p>
+	
+	</div>
+	
+	<div class= "span4">
+		<h4>Optional</h4>
+			<p> Fermentables </p>	
+					
+					<div class="input-append">
+						<%= f.fields_for :fermentables do |fermentables| %>		
+							<%= fermentables.text_field :name %>
+							<%= fermentables.link_to_remove "-", :class => 'btn btn-danger' %>
+						<% end %>	
+						<p><%= f.link_to_add "Add +", :fermentables, :class => 'btn' %></p>
+					</div>
+				
+			<p> Hops </p>	
+				
+					<div class="input-append">
+						<%= f.fields_for :hops do |hops| %>
+							<%= hops.text_field :name%>
+							<%= hops.link_to_remove "-", :class => 'btn btn-danger' %>
+						<% end %>
+						<p><%= f.link_to_add "Add +", :hops, :class => 'btn' %></p>
+					</div>
+				
+			<p> Yeasts </p>	
+				
+					<div class="input-append">
+						<%= f.fields_for :yeasts do |yeasts| %>
+							<%= yeasts.text_field :name%>
+							<%= yeasts.link_to_remove "-", :class => 'btn btn-danger'  %>
+						<% end %>
+						<p><%= f.link_to_add "Add +", :yeasts, :class => 'btn' %></p>
+					</div>
+				
+			<p> Extras </p>	
+				
+				<div class="input-append">
+					<%= f.fields_for :extras do |extras| %>
+						<%= extras.text_field :name%>
+						<%= extras.link_to_remove "-", :class => 'btn btn-danger'  %>
+					<% end %>
+					<p><%= f.link_to_add "Add +", :extras, :class => 'btn' %></p>
+				</div>
+	</div>
+
+	<div class="span1">
+		<p> <%= f.submit "Save Brew", :class => 'btn' %> </p>
+		<% end %>
+	</div>
+</div>

@@ -1,0 +1,25 @@
+// Place all the styles related to the Brews controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+/* Required for JQuery Masonry */
+@media (min-width:980px) {
+    body {
+        padding-top: 50px;
+    }
+}
+.box {
+    margin: 5px;
+    padding: 5px;
+    font-size: 11px;
+    line-height: 1.4em;
+    float: left;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 3px;
+    box-shadow: 1px 1px 10px #484848;
+    width: 214px;
+    a {color:#5a5a5a;}
+}
+

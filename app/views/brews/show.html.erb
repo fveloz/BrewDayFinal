@@ -1,0 +1,37 @@
+
+
+<div class = "span6">
+		<h1><%= @brew.name %></h1>
+		<h4> The Story </h4>
+  	<p><%= @brew.story %></p>
+  	<h4>Walk through the brew</h4>
+   	<p><%= @brew.walkthrough %></p>		
+ </div>
+
+<div class="span4 pull-right">	
+	<h3>Ingredients</h3>
+		<% @brew.fermentables.each do |fermentable| %>
+		  	<%=fermentable.name.capitalize %> |
+		<% end %>
+
+		<% @brew.hops.each do |hop| %>
+		  	<%=hop.name.capitalize %> |
+		<% end %>
+
+		<% @brew.yeasts.each do |yeasts| %>
+		  	<%=yeasts.name.capitalize %> |	
+		<% end %>
+
+		<% @brew.extras.each do |extras| %>
+		  	<%=extras.name.capitalize %> |
+		<% end %>
+		<div>
+   		<% if @brew.user == current_user %>
+   			<p>	
+   				<%= (link_to "Edit", edit_brew_path, :class => 'btn') %> |
+   				<%= (link_to 'Delete Beer', @brew, :class => 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?'}) %>
+   			</p>
+   		<%end %>
+		</div>
+</div>
+
